@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="48.0" prefWidth="276.0" xmlns="http://javafx.com/javafx/8.0.141"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.edits.EditScheduleForm">
+    <children>
+        <DatePicker fx:id="date" layoutX="14.0" layoutY="12.0" AnchorPane.bottomAnchor="11.0"
+                    AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="88.0" AnchorPane.topAnchor="12.0"/>
+        <Button fx:id="btnOk" onAction="#actionButton" defaultButton="true" layoutX="204.0" layoutY="12.0"
+                mnemonicParsing="false" text="Принять" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="204.0"
+                AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="12.0"/>
+    </children>
+</AnchorPane>

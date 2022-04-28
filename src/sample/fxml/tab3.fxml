@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="tab3" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ThirdTabController">
+    <children>
+        <TableView fx:id="tableViewThird" prefHeight="410.0" prefWidth="610.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="columnTransactions" prefWidth="75.0" text="id"/>
+                <TableColumn fx:id="columnMoney" prefWidth="75.0" text="Деньги"/>
+                <TableColumn fx:id="columnDate" prefWidth="75.0" text="Дата"/>
+                <TableColumn fx:id="columnIdHall" prefWidth="75.0" text="id hall"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </children>
+</AnchorPane>

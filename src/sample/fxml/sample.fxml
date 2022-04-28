@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="sample" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="464.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="sample.controllers.Controller">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu mnemonicParsing="false" text="Открыть">
+                    <items>
+                        <MenuItem fx:id="openTab1" mnemonicParsing="false" onAction="#openTab" text="Клиенты"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="openTab2" mnemonicParsing="false" onAction="#openTab" text="Зал"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="openTab3" mnemonicParsing="false" onAction="#openTab" text="Операции"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="tabAllStock" mnemonicParsing="false" onAction="#openTab" text="Акции"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="tabStock" mnemonicParsing="false" onAction="#openTab" text="Акции клиентов"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="tabTrainers" mnemonicParsing="false" onAction="#openTab" text="Тренера"/>
+                    </items>
+                    <items>
+                        <MenuItem fx:id="itemGroup" mnemonicParsing="false" onAction="#openTab" text="Группы"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <HBox alignment="TOP_RIGHT" prefHeight="40.0" prefWidth="674.0">
+            <children>
+                <Button fx:id="btnScreech" onAction="#actionButtonPressed" mnemonicParsing="false" text="Поиск">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <TextField fx:id="textScreech" prefHeight="25.0" prefWidth="185.0">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                    </HBox.margin>
+                </TextField>
+            </children>
+        </HBox>
+        <TabPane fx:id="tabPane" onMouseClicked="#actionTab" prefHeight="382.0" prefWidth="674.0"
+                 tabClosingPolicy="ALL_TABS" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab fx:id="tab" text="Клиенты">
+                    <content>
+                        <fx:include fx:id="firstTabPage" source="tab1.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="Hall" text="Залы">
+                    <content>
+                        <fx:include fx:id="secondTabPage" source="tab2.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="subscription" text="Купленные абонименты">
+                    <content>
+                        <fx:include fx:id="thirdTabPage" source="tab3.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="trainer" text="Тренера">
+                    <content>
+                        <fx:include fx:id="tableTrainers" source="tabTrainers.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="stock" text="Акции для клиентов">
+                    <content>
+                        <fx:include fx:id="tableStock" source="tabStock.fxml"/>
+                    </content>
+                </Tab>
+                <Tab fx:id="allStock" text="Все Акции">
+                    <content>
+                        <fx:include fx:id="allTableStock" source="tabAllStock.fxml"/>
+                    </content>
+                </Tab>
+                <!--<Tab fx:id="scheduleGroup" text="Расписание Групп">-->
+                <!--<content>-->
+                <!--<fx:include fx:id="tabScheduleGroup" source="tabScheduleGroup.fxml" />-->
+                <!--</content>-->
+                <!--</Tab>-->
+                <Tab fx:id="group" text="Группы">
+                    <content>
+                        <fx:include fx:id="tabGroup" source="group.fxml"/>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <TitledPane animated="false" prefWidth="674.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <Button fx:id="btnAdd" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+                                onAction="#actionButtonPressed" text="Добавить клиента"/>
+                        <Button fx:id="btnTrainer" layoutX="139.0" layoutY="14.0" mnemonicParsing="false"
+                                onAction="#actionButtonPressed" text="Добавить тренера"/>
+                        <Button fx:id="btnSportRep" layoutX="267.0" layoutY="14.0" mnemonicParsing="false"
+                                onAction="#actionButtonPressed" text="Отчёт"/>
+                        <Button fx:id="btnSendEmail" disable="true" layoutX="125.0" layoutY="14.0"
+                                mnemonicParsing="false" onAction="#actionButtonPressed" text="Отправить"
+                                visible="false"/>
+                        <Button fx:id="btnBuildStock" disable="true" layoutX="14.0" layoutY="14.0"
+                                mnemonicParsing="false" onAction="#actionButtonPressed" text="Собрать Акции"
+                                visible="false"/>
+                        <Button fx:id="btnAddStock" disable="true" layoutX="211.0" layoutY="14.0"
+                                mnemonicParsing="false" onAction="#actionButtonPressed" text="Добавить Акцию"
+                                visible="false"/>
+                    </children>
+                </AnchorPane>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>
